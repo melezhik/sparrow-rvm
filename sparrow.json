@@ -1,6 +1,6 @@
 {
   "name" : "rvm",
-  "version" : 0.0.1,
+  "version" : "0.0.1",
   "description" : "install rvm and Ruby",
   "category" : "applications",
   "url" : "https://github.com/melezhik/sparrow-rvm"
