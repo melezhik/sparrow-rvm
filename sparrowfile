@@ -1,0 +1,6 @@
+
+set_spl %( rmv-dev => 'https://github.com/melezhik/sparrow-rvm.git');
+
+package-install 'git';
+
+task-run "install rvm", "rvm-dev";
