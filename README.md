@@ -6,6 +6,10 @@ Install rvm and Ruby
 
     $ sparrow plg install rvm
 
+# Build status
+
+[![Build Status](https://travis-ci.org/melezhik/sparrow-rvm.svg)](https://travis-ci.org/melezhik/sparrow-rvm)
+
 # Usage
 
 ## By sparrow

@@ -1,0 +1,13 @@
+language: perl6
+sudo: false
+perl6:
+    - latest
+before_install:
+  - cat /dev/zero | ssh-keygen -q -N ""
+  - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+  - chmod og-wx ~/.ssh/authorized_keys
+install:
+    - rakudobrew build-zef
+script:
+  - zef install Sparrowdo
+  - sparrowdo --bootstrap --host=127.0.0.1
