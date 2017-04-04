@@ -1,3 +1,5 @@
+language: perl
+
 before_install:
   - export PATH=/opt/rakudo/bin:$PATH
   - cat /dev/zero | ssh-keygen -q -N ""
@@ -9,5 +11,6 @@ install:
     - sudo dpkg -i *.deb
     - install_zef_as_user.sh
     - zef install Sparrowdo
+    - cpanm -S --notest -q Sparrow
 script:
-  - sparrowdo --bootstrap --host=127.0.0.1
+  - sparrowdo --host=127.0.0.1
