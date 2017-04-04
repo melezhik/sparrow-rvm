@@ -1,12 +1,13 @@
 language: perl
 before_install:
-  - cpanm -q --notest install Sparrow
+  - export PATH=/opt/rakudo/bin:$PATH
   - cat /dev/zero | ssh-keygen -q -N ""
   - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
   - chmod og-wx ~/.ssh/authorized_keys
 install:
+    - sudo cpanm -q --notest install Sparrow
     - sudo sparrow plg install rakudo-install
     - sudo sparrow plg run rakudo-install
-    - export PATH=/opt/rakudo/bin:$PATH && zef install Sparrowdo
+    - zef install Sparrowdo
 script:
   - sparrowdo --bootstrap --host=127.0.0.1
