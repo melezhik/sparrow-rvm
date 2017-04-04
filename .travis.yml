@@ -5,7 +5,8 @@ before_install:
   - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
   - chmod og-wx ~/.ssh/authorized_keys
 install:
-    - sparrow plg install rakudo-install
+    - sudo sparrow plg install rakudo-install
+    - sudo sparrow plg run rakudo-install
+    - export PATH=/opt/rakudo/bin:$PATH && zef install Sparrowdo
 script:
-  - zef install Sparrowdo
   - sparrowdo --bootstrap --host=127.0.0.1
