@@ -5,9 +5,10 @@ before_install:
   - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
   - chmod og-wx ~/.ssh/authorized_keys
 install:
-    - sudo cpanm -q --notest install Sparrow
-    - sudo sparrow plg install rakudo-install
-    - sudo sparrow plg run rakudo-install
-    - zef install Sparrowdo
+    - export PATH=/opt/rakudo/bin:$PATH
+    - wget https://github.com/nxadm/rakudo-pkg/releases/download/2017.03_02/perl6-rakudo-moarvm-ubuntu16.04_20170300-02_amd64.deb
+    - dpkg -i *.deb
+    - install_zef_as_user.sh
+    - ~/.perl6/zef install Sparrowdo
 script:
   - sparrowdo --bootstrap --host=127.0.0.1
